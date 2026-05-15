@@ -74,7 +74,7 @@ body{
 
 /* HEADER */
 .page-header{
-  position: sticky; top: 0; z-index: 50;
+  position: sticky; top: 34px; z-index: 50;
   background: rgba(247,242,234,0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -721,6 +721,53 @@ body{
 }
 .nav-item .ico svg{ width: 16px; height: 16px; }
 
+
+/* TOP CTA BAR (sticky community invite) */
+.top-cta-bar{
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: linear-gradient(90deg, #F5EFE5 0%, #EBE0D0 100%);
+  border-bottom: 1px solid rgba(58,46,42,0.1);
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 430px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(58,46,42,0.05);
+}
+.top-cta-text{
+  flex: 1;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #6B5D57;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.top-cta-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: transform 0.15s, opacity 0.2s;
+  flex-shrink: 0;
+}
+.top-cta-btn:active{ transform: scale(0.95); }
+.top-cta-btn.line{ background: #06C755; }
+.top-cta-btn.discord{ background: #5865F2; }
+.top-cta-btn svg{ width: 10px; height: 10px; }
+
 </style>
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -748,7 +795,22 @@ body{
 </head>
 <body>
 
+
 <div class="app">
+
+  <!-- TOP CTA BAR (community invite) -->
+<div class="top-cta-bar">
+  <span class="top-cta-text">コミュニティ参加はこちら →</span>
+  <a class="top-cta-btn line" href="https://liff.line.me/2009118446-ZPutgCO0/landing?follow=%40161qazcj&lp=BGfQ1J&liff_id=2009118446-ZPutgCO0" target="_blank" rel="noopener" aria-label="LINEで参加">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zM24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINE
+  </a>
+  <a class="top-cta-btn discord" href="https://discord.gg/NyNSrmhzsa" target="_blank" rel="noopener" aria-label="Discordで参加">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.376-.444.866-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.74 19.74 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.873-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.1 13.1 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.099.246.198.373.292a.077.077 0 01-.006.128 12.3 12.3 0 01-1.873.891.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.84 19.84 0 006.003-3.03.077.077 0 00.031-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.182 0-2.157-1.085-2.157-2.42 0-1.332.955-2.418 2.157-2.418 1.211 0 2.176 1.096 2.157 2.419 0 1.334-.955 2.42-2.157 2.42zm7.974 0c-1.182 0-2.157-1.085-2.157-2.42 0-1.332.955-2.418 2.157-2.418 1.211 0 2.176 1.096 2.157 2.419 0 1.334-.946 2.42-2.157 2.42z"/></svg>
+    Discord
+  </a>
+</div>
+
 
   <!-- HEADER -->
   <header class="page-header">
